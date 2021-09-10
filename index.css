@@ -73,6 +73,7 @@ a {
 }
 
 /* tooltip for the delete button */
+
 [data-tooltip]:hover {
   position: relative;
 }
@@ -85,7 +86,7 @@ a {
   padding: 10px;
   background-color: var(--main-color);
   content: attr(data-tooltip);
-  color: #f9f9f9;
+  color: hsl(0, 0%, 98%);
   position: absolute;
   bottom: 100%;
   width: 100px;
