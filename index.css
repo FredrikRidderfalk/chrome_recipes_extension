@@ -74,41 +74,44 @@ a {
 
 /* tooltip for the delete button */
 
-[data-tooltip]:hover {
+.tooltip {
   position: relative;
+  display: inline-block;
 }
 
-[data-tooltip]:hover::before {
-  all: initial;
-  font-family: Arial, Helvetica, sans-serif;
-  display: inline-block;
-  border-radius: 5px;
-  padding: 10px;
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
   background-color: var(--main-color);
-  content: attr(data-tooltip);
-  color: hsl(0, 0%, 98%);
-  position: absolute;
-  bottom: 100%;
-  width: 100px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  margin-bottom: 15px;
+  color: #fff;
   text-align: center;
-  font-size: 14px;
+  border-radius: 6px;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -75px;
+  font-size: 12px;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 0.5s;
+  transition-delay: 0.5s;
 }
 
-[data-tooltip]:hover::after {
-  all: initial;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid var(--main-color);
-  position: absolute;
-  bottom: 100%;
+.tooltip .tooltiptext::after {
   content: "";
+  position: absolute;
+  top: 100%;
   left: 50%;
-  transform: translate(-50%, 0);
-  margin-bottom: 5px;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--main-color) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0.8;
 }
