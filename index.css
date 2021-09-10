@@ -3,6 +3,7 @@
 :root {
   --main-color: hsl(221, 99%, 51%);
   --hover-color: hsl(221, 99%, 45%);
+  --delete-color: hsl(0, 100%, 90%);
 }
 
 body {
@@ -40,8 +41,20 @@ button {
   background: var(--hover-color);
 }
 
+#tab-btn:active,
+#input-btn:active {
+  transform: scale(0.98);
+  box-shadow: hsla(240, 30%, 28%, 0.25) 0px 1px 3px -1px,
+    hsla(0, 0%, 0%, 0.3) 0px 0px 1px -1px;
+}
+
 #delete-btn {
   background: white;
+  color: var(--main-color);
+}
+
+#delete-btn:hover {
+  background: var(--delete-color);
   color: var(--main-color);
 }
 
